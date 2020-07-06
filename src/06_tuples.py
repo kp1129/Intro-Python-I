@@ -48,4 +48,7 @@ print_tuple(t)  # Prints 1 2 5 7 99, one per line
 
 # Declare a tuple of 1 element then print it
 u = (1)  # What needs to be added to make this work?
+# i assumed ^ meant what needs to be changed in the function,
+# but another option is to add a comma, as in (1,)
+
 print_tuple(u)
