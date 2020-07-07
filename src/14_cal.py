@@ -30,3 +30,25 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+def create_calendar():     
+    current = datetime.now()
+
+    if len(sys.argv) == 1:
+        # if no input from the user, print current month
+        new_cal = calendar.TextCalendar(firstweekday=6).prmonth(current.year, current.month)
+        return new_cal
+    elif len(sys.argv) == 2:
+        # if user supplied a specific month
+        new_cal = calendar.TextCalendar(firstweekday=6).prmonth(current.year, int(sys.argv[1]))
+        return new_cal
+    else:  
+        # if user supplied extra arguments after month and year
+        if len(sys.argv) > 3:
+            print("\nNoticed you got some extra arguments there.\nOnly the month and the year, please\n")    
+        # if user supplied both month and year    
+        new_cal = new_cal = calendar.TextCalendar(firstweekday=6).prmonth(int(sys.argv[2]), int(sys.argv[1]))
+        return new_cal
+          
+
+create_calendar()            
